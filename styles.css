@@ -17,25 +17,24 @@ header {
   justify-content: space-between;
   width: 80%;
   padding: 1em 0;
+  flex-wrap: wrap;
 }
-
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 2em 0;
-  width: 80%;
+  padding: 100px 0;
+  width: 90%;
 }
 
 #productGrid {
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
-
   justify-content: center;
-  margin-top: 1em;
+  margin-top: 10px;
   width: 100%;
 }
 
@@ -118,6 +117,7 @@ button.loading:after {
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: inline-block; 
+  text-align: center;
 }
 
 .add-to-cart:hover {
@@ -126,4 +126,52 @@ button.loading:after {
 
 .product-card.fade-in {
   opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header, main {
+    width: 90%;
+  }
+  
+  #productGrid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .product-card {
+    width: 100%;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 0.6em 1.2em;
+  }
+
+  .add-to-cart {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  header, main {
+    width: 95%;
+    padding: 1em 0;
+  }
+
+  .product-card {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  button {
+    font-size: 0.8em;
+    padding: 0.5em 1em;
+  }
+
+  .add-to-cart {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
 }
