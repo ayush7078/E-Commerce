@@ -22,6 +22,7 @@ async function fetchProducts() {
     loadButton.style.display = "none";
     
     mainElement.style.padding = "5px";
+    mainElement.style.marginTop = "5px";
   } catch (error) {
     console.error("Failed to fetch products:", error);
     productGrid.innerHTML = "<p>Failed to load products. Please try again later.</p>";
