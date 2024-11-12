@@ -6,6 +6,7 @@ let products = [];
 async function fetchProducts() {
   const productGrid = document.getElementById("productGrid");
   const loadButton = document.getElementById("loadProducts");
+  const mainElement = document.querySelector("main");
 
   loadButton.classList.add("loading");
 
@@ -19,6 +20,8 @@ async function fetchProducts() {
     renderProducts(products);
 
     loadButton.style.display = "none";
+    
+    mainElement.style.padding = "5px";
   } catch (error) {
     console.error("Failed to fetch products:", error);
     productGrid.innerHTML = "<p>Failed to load products. Please try again later.</p>";
@@ -35,7 +38,7 @@ function renderProducts(productArray) {
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
     productCard.style.transitionDelay = `${index * 100}ms`;
-
+    
     productCard.innerHTML = `
       <img src="${product.product.images[0].src}" alt="${product.product.title}">
       <h3>${product.product.title}</h3>
